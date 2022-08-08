@@ -1,13 +1,13 @@
 {
-    "users": [
-        {
-            "username": "testUsername",
-            "firstName": "Test Nome",
-            "lastName": "Test Cognome",
-            "gender": "Male",
-            "email": "test@example.com",
-            "tel": "+39 347 657 3276",
-            "id": 0
-        }
-    ]
+  "users": [
+    {
+      "username": "test",
+      "firstName": "werowero",
+      "lastName": "sdfsjf",
+      "gender": "sofjso",
+      "email": "osjdfsjfo",
+      "tel": "23042437",
+      "id": 1
+    }
+  ]
 }
