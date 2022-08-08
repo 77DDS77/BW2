@@ -1,0 +1,13 @@
+{
+    "users": [
+        {
+            "username": "testUsername",
+            "firstName": "Test Nome",
+            "lastName": "Test Cognome",
+            "gender": "Male",
+            "email": "test@example.com",
+            "tel": "+39 347 657 3276",
+            "id": 0
+        }
+    ]
+}
