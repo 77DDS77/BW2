@@ -1,3 +1,21 @@
+
+
+
+import { Shop } from "../constructor/class.js";
+
+window.onload = getShops()
+
+
+function getShops() {
+    fetch("http://localhost:3000/shops")
+    .then(risposta => risposta.json())
+    .then(shops => {
+        for(let shop of shops) {
+            shop = new Shop(shop.id, shop.shopName, shop.address, shop.mail, shop.tel, shop.products)
+        }
+    })
+}
+
 import { Utente } from '../constructor/class.js' ;
 
 
@@ -14,6 +32,7 @@ function getUsers() {
         }
     })
 }
+
 
 
 
