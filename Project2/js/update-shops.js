@@ -25,6 +25,11 @@ let button = document.querySelector("#salva-modificheshops")
 
 button.addEventListener("click", function (e) {
     e.preventDefault()
+    let shop = document.querySelector("#shopName")
+    let address = document.querySelector("#address")
+    let email = document.querySelector("#mail")
+    let telefono = document.querySelector("#tel")
+    let prodotti = document.querySelector("#products")
     let shops = {
         shopName: shop.value,
         address: address.value,
@@ -59,10 +64,10 @@ button.addEventListener("click", function (e) {
                         text: `shop ${res.shopName} has been updated`,
                         showConfirmButton: false,
                         timer: 2000
-                      }).then(() => {
+                    }).then(() => {
                         location.href = "index.html"
-                      })
-                    
+                    })
+
                 })
         } else if (result.isDenied) {
             Swal.fire('Changes are not saved', 'you can keep updating', 'info')

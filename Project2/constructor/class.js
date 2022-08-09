@@ -3,14 +3,6 @@
 //id e password da non mostrare su accordion
 //COMMENTARE
 
-
-//user creation class
-export class Utente{
-    constructor(id, username, firstName, lastName, gender, email, tel, password){
-
-    }
-}
-
 //shoop creation class
 export class Shop{
     constructor(id, shopName, address, mail, tel, products) {
@@ -79,7 +71,7 @@ export class Shop{
 
         bottoneUpdate.textContent = "Update"
         bottoneUpdate.className = "btn btn-warning"
-        bottoneUpdate.href = "modifica.html?id=" + this.id
+        bottoneUpdate.href = "modifica-shops.html?id=" + this.id
         bottoneDelete.textContent = "Delete"
         bottoneDelete.className = "btn btn-danger ms-2"
 
@@ -149,20 +141,4 @@ export class Utente {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-//shoop creation class
-export class Shop{
-    constructor(id, shopName, address, mail, tel, products){
-
-    }
-}
 

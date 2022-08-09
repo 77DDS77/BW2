@@ -11,11 +11,11 @@ button.addEventListener("click", function(e) {
     let prodotti = document.querySelector("#products")
 
     let shops = {
-        shop: shop.value,
+        shopName: shop.value,
         address: address.value,
-        email: email.value,
-        telefono: telefono.value,
-        prodotti: prodotti.value
+        mail: email.value,
+        tel: telefono.value,
+        products: prodotti.value
     }
 
     let option = {

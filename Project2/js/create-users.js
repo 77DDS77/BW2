@@ -4,6 +4,7 @@ let button = document.querySelector("#salva-user")
 
 button.addEventListener("click", function(e) {
     e.preventDefault()
+    //------------------------ inserire check per password e conferma password ==
     let nome = document.querySelector("#nome")
     let cognome = document.querySelector("#cognome")
     let username = document.querySelector("#username")
