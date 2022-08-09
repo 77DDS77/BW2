@@ -5,7 +5,6 @@
 
 
 //user creation class
-
 export class Utente{
     constructor(id, username, firstName, lastName, gender, email, tel, password){
 

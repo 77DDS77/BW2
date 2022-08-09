@@ -7,13 +7,15 @@
       "gender": "male",
       "email": "davide.dds.dalsanto@gmail.com",
       "tel": "340 333 4455",
-      "password": "testPassword",
+      "password": "test",
       "id": 1
     }
   ],
-  "shops": [
+
+
+  "shops":[
     {
-      "id": 1,
+      "id":1,
       "shopName": "Davide's Shop",
       "address": "Via Appia 1, Roma",
       "mail": "davideshop@gmail.com",
