@@ -24,7 +24,7 @@ function checkLogin() {
 
                     if (inputUser.value == user.username || inputUser.value == user.email) {
                         if (inputPwrd.value == user.password) {
-
+                            console.log('pw e username corretti');
                             //both userInput and password are correct
                             Swal.fire({
                                 icon: 'success',
@@ -37,7 +37,7 @@ function checkLogin() {
                                 sessionStorage.setItem('user logged in', JSON.stringify(user));
                                 checkLogStatus();
                             })
-
+                            break;
                         } else {
                             //input wrong password
                             Swal.fire({

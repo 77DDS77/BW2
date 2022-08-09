@@ -19,6 +19,16 @@
       "tel": "31318728",
       "password": "ciao",
       "id": 2
+    },
+    {
+      "username": "Clearu",
+      "firstName": "Claudio",
+      "lastName": "Urru",
+      "gender": "Male",
+      "email": "iausdiaudiuh",
+      "tel": "1312313",
+      "password": "prova",
+      "id": 3
     }
   ],
   "shops": [
