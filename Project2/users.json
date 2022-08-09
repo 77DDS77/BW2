@@ -7,7 +7,18 @@
       "gender": "sofjso",
       "email": "osjdfsjfo",
       "tel": "23042437",
+      "password": "testPassword",
       "id": 1
+    }
+  ],
+  "shops": [
+    {
+      "id": 1,
+      "shopName": "Davide's Shop",
+      "address": "Via Appia 1, Roma",
+      "mail": "davideshop@gmail.com",
+      "tel": "334 887 2829",
+      "products": "Abbigliamento"
     }
   ]
 }
