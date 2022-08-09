@@ -10,19 +10,15 @@
       "password": "testPassword",
       "id": 1
     }
-  ]
-,
-
-
-  "shops":[
+  ],
+  "shops": [
     {
-      "id":1,
+      "id": 1,
       "shopName": "Davide's Shop",
       "address": "Via Appia 1, Roma",
       "mail": "davideshop@gmail.com",
       "tel": "334 887 2829",
       "products": "Abbigliamento"
     }
-
   ]
 }
