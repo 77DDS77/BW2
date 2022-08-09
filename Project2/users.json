@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "username": "test",
-      "firstName": "werowero",
-      "lastName": "sdfsjf",
-      "gender": "sofjso",
-      "email": "osjdfsjfo",
-      "tel": "23042437",
+      "username": "DDS",
+      "firstName": "Davide",
+      "lastName": "Dal Santo",
+      "gender": "male",
+      "email": "davide.dds.dalsanto@gmail.com",
+      "tel": "340 333 4455",
       "password": "testPassword",
       "id": 1
     }
