@@ -10,29 +10,31 @@
     <title>BW 2 - Modifica Utenti</title>
 </head>
 <body>
-
     <header>
         <nav class="navbar bg-dark">
-            <div class="container-fluid justify-content-between">
-              <a class="navbar-brand text-warning" href="./index.html">
-                CHECK THIS OUT
-              </a>
-              <p class="text-white mb-0">You are logged as: <span id="logged-user" class="text-warning text-uppercase"></span></p>
+          <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="./index.html">
+              CHECK THIS OUT
+            </a>
+            <nav class="navbar bg-dark position-100">
+                <a href="./create-newshops.html" class="btn btn-warning my-2 my-lg-0">POST NEW SHOP</a>
+                <a href="./shops&users.html" class="btn btn-warning my-2 my-lg-0 mx-2">CHECK ALL USERS & SHOPS</a>
               <a href="./login.html" id="login-btn" class="btn btn-warning">LOGIN</a>
               <button id="logout-btn" class="btn btn-danger d-none">LOGOUT</button>
-            </div>
-          </nav>
+            </nav>
+          </div>
+        </nav>
         <nav class="navbar bg-dark">
-            <div class="container-fluid justify-content-center">
-              <a href="#" class="btn btn-warning my-2 my-lg-0 mx-2">POST NEW SHOP</a>
-              <a href="#" class="btn btn-warning my-2 my-lg-0 mx-2">CHECK ALL USERS & SHOPS</a>
-            </div>
-          </nav>
-    </header>
+          <div class="container-fluid justify-content-center">
+            <p class="text-white mb-0">You are logged as: <span id="logged-user" class="text-warning text-uppercase"></span>
+            </p>
+          </div>
+        </nav>
+      </header>
     
     <div class="container text-center">
         <h1 class="pt-5">UPDATE USER</h1>
-        <a href="index.html" class="btn btn-primary">Home</a>
+        <a href="index.html" class="btn btn-warning text-dark">Home</a>
     </div>
     <div class="container">
         <form id="update-form">
@@ -69,7 +71,7 @@
                     <label for="conferma" class="text-primary">Conferma password: </label>
                     <input type="password" class="form-control" id="conferma-password" placeholder="CONFERMA PASSWORD">
                 </div>
-                <button class="btn btn-primary my-4" id="salva-modifiche">Save</button>
+                <button class="btn btn-warning text-dark my-4" id="salva-modifiche">Save</button>
             </div>
         </form>
     </div>
@@ -77,4 +79,9 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/update-users.js" type="module"></script>
 </body>
+<footer class="fixed-bottom">
+    <div class="text-center text-white p-2 bg-dark">
+        © 2022 Copyright: Team 2
+    </div>
+</footer>
 </html>

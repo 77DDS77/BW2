@@ -55,6 +55,14 @@
       "tel": "321 909 7766",
       "products": "caramelle e dolciumi",
       "id": 3
+    },
+    {
+      "shopName": "pizza",
+      "address": "test",
+      "mail": "test@test@test",
+      "tel": "test0123test",
+      "products": "test",
+      "id": 4
     }
   ]
 }

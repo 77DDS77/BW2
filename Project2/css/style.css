@@ -4,3 +4,23 @@ body{
     font-family: 'Montserrat', sans-serif;
 
 }
+
+#search-box {
+    max-width: 694px;
+}
+@media screen and (min-width: 992px) {
+    #search-box {
+        margin: 0 auto;
+    }
+}
+
+ul {
+    list-style: none;
+}
+#search-items {
+    width: 100%;
+    background-color: rgb(230, 228, 228);
+}
+#search-items li:nth-of-type(even) {
+    background-color: rgb(206, 206, 206);
+}
