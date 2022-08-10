@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>BW2 Project2 - Home </title>
+
+</head>
+
+<body>
+    <header class="position-sticky sticky-top">
+        <nav class="navbar bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="./index.html">
+              CHECK THIS OUT
+            </a>
+            <nav class="navbar bg-dark position-100">
+                <a href="./create-newshops.html" class="btn btn-warning my-2 my-lg-0">POST NEW SHOP</a>
+                <a href="./shops&users.html" class="btn btn-warning my-2 my-lg-0 mx-2">CHECK ALL USERS & SHOPS</a>
+              <a href="./login.html" id="login-btn" class="btn btn-warning">LOGIN</a>
+              <button id="logout-btn" class="btn btn-danger d-none">LOGOUT</button>
+            </nav>
+          </div>
+        </nav>
+        <nav class="navbar bg-dark">
+          <div class="container-fluid justify-content-center">
+            <p class="text-white mb-0">You are logged as: <span id="logged-user" class="text-warning text-uppercase"></span>
+            </p>
+          </div>
+        </nav>
+      </header>
+
+
+    <div class="container text-center mb-5 px-4">
+        <h1 class="pt-5">USERS & SHOPS</h1>
+        <div>
+            <label for="nome" class="text-primary my-4">Ricerca per Username: </label>
+            <div class="row">
+                <div class="col-10 px-0">
+                    <input type="text" class="form-control text-center" id="ricerca" placeholder="USERNAME">
+                </div>
+                <button class="btn btn-warning text-dark col-2" id="searchBtn">Cerca</button>
+            </div>
+            <div id="search-items">
+                
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="accordion" id="searched-users">
+
+        </div>
+
+
+
+            
+
+        <!-- contenitore accordion Shops -->
+        <div class="accordion" id="myShops">
+
+            <!-- put everithing in a div d-none -->
+            <div class="d-none">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="dummyAccordion">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#shop-shopID" aria-controls="collapseOne">
+                            Nome utente
+                        </button>
+                    </h2>
+                    <div id="shop-shopID" class="accordion-collapse collapse" aria-labelledby="dummyAccordion"
+                        data-bs-parent="#myShops">
+                        <div class="accordion-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- next acc item -->
+        </div>
+    <!--Contenitore esterno per l'intero accordion del singolo utente-->
+    <div class="accordion mt-5" id="oneUser">
+
+
+        <!--Tutto il contenuto interno dell'accordion va nel mondo delle idee, grazie alla classe d-none. Grazie al metodo clone poi attingeremo a questa idea per concretizzarla e grazie ad un ciclo questo avverrà per ogni singolo user -->
+        <div class="d-none">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="titleAccordion">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#utente-IDuser" aria-expanded="false" aria-controls="collapseOne">
+                        Nome utente
+                    </button>
+                </h2>
+                <div id="utente-IDuser" class="accordion-collapse collapse" aria-labelledby="titleAccordion"
+                    data-bs-parent="#oneUser">
+                    <div class="accordion-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../js/delete.js"></script>
+    <script src="../js/search.js" type="module"></script>
+
+
+
+
+
+
+
+    <script src="../js/read.js" type="module"></script> 
+    <!-- type="module" indica che sul file read.js c'è un import di un altro file, che in questo caso è class.js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

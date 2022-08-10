@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "username": "DDS",
+      "firstName": "Davide",
+      "lastName": "Dal Santo",
+      "gender": "male",
+      "email": "davide.dds.dalsanto@gmail.com",
+      "tel": "340 333 4455",
+      "password": "test",
+      "id": 1
+    },
+    {
+      "username": "Clearu",
+      "firstName": "Claudio",
+      "lastName": "Urru",
+      "gender": "Male",
+      "email": "iausdiaudiuh",
+      "tel": "1312313",
+      "password": "prova",
+      "id": 3
+    },
+    {
+      "username": "fabi",
+      "firstName": "Fabi",
+      "lastName": "B",
+      "gender": "female",
+      "email": "fabiolabarone.fb94@gmail.com",
+      "tel": "333 444 4446",
+      "password": "123456",
+      "id": 4
+    }
+  ],
+  "shops": [
+    {
+      "shopName": "Davide's Shop",
+      "address": "Via Appia 1, Roma",
+      "mail": "davideshop@gmail.com",
+      "tel": "334 887 2829",
+      "products": "Fugasse",
+      "id": 1
+    },
+    {
+      "shopName": "Pizzeria Arcangelo",
+      "address": "Via roma 1 Reggio",
+      "mail": "test@test.it",
+      "tel": "12325163",
+      "products": "Pizze",
+      "id": 2
+    },
+    {
+      "shopName": "Caramelle shop",
+      "address": "via Appia 81",
+      "mail": "caramelleworld2@gmail.com",
+      "tel": "321 909 7766",
+      "products": "caramelle e dolciumi",
+      "id": 3
+    }
+  ]
+}
