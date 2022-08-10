@@ -21,7 +21,7 @@
 
 <body>
 
-    <header>
+   <!-- <header>
         <nav class="navbar bg-dark">
             <div class="container-fluid justify-content-between">
               <a class="navbar-brand text-warning" href="./index.html">
@@ -38,12 +38,34 @@
               <a href="#" class="btn btn-warning my-2 my-lg-0 mx-2">CHECK ALL USERS & SHOPS</a>
             </div>
           </nav>
-    </header>
+    </header> -->
+
+    <header class="position-sticky sticky-top">
+        <nav class="navbar bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="./index.html">
+              CHECK THIS OUT
+            </a>
+            <nav class="navbar bg-dark position-100">
+              <a href="./create-newshops.html" class="btn btn-warning my-2 my-lg-0">POST NEW SHOP</a>
+              <a href="./shops&users.html" class="btn btn-warning my-2 my-lg-0 mx-2">CHECK ALL USERS & SHOPS</a>
+              <a href="./login.html" id="login-btn" class="btn btn-warning">LOGIN</a>
+              <button id="logout-btn" class="btn btn-danger d-none">LOGOUT</button>
+            </nav>
+          </div>
+        </nav>
+        <nav class="navbar bg-dark">
+          <div class="container-fluid justify-content-center">
+            <p class="text-white mb-0">You are logged as: <span id="logged-user" class="text-warning text-uppercase"></span>
+            </p>
+          </div>
+        </nav>
+      </header>
 
 
     <div class="container text-center mb-5 px-4">
         <h1 class="pt-5">SHOPS</h1>
-        <a href="./create-newshops.html" class="btn btn-primary">Add New Shop</a>
+        
        
     </div>
     <div class="container mt-4">
