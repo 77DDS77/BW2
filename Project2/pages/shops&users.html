@@ -22,25 +22,26 @@
 <body>
     <header class="position-sticky sticky-top">
         <nav class="navbar bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand text-warning" href="./index.html">
-              CHECK THIS OUT
-            </a>
-            <nav class="navbar bg-dark position-100">
-                <a href="./create-newshops.html" class="btn btn-warning my-2 my-lg-0">POST NEW SHOP</a>
-                <a href="./shops&users.html" class="btn btn-warning my-2 my-lg-0 mx-2">CHECK ALL USERS & SHOPS</a>
-              <a href="./login.html" id="login-btn" class="btn btn-warning">LOGIN</a>
-              <button id="logout-btn" class="btn btn-danger d-none">LOGOUT</button>
-            </nav>
-          </div>
+            <div class="container-fluid">
+                <a class="navbar-brand text-warning" href="./index.html">
+                    CHECK THIS OUT
+                </a>
+                <nav class="navbar bg-dark position-100">
+                    <a href="./create-newshops.html" class="btn btn-warning my-2 my-lg-0">POST NEW SHOP</a>
+                    <a href="./shops&users.html" class="btn btn-warning my-2 my-lg-0 mx-2">CHECK ALL USERS & SHOPS</a>
+                    <a href="./login.html" id="login-btn" class="btn btn-warning">LOGIN</a>
+                    <button id="logout-btn" class="btn btn-danger d-none">LOGOUT</button>
+                </nav>
+            </div>
         </nav>
         <nav class="navbar bg-dark">
-          <div class="container-fluid justify-content-center">
-            <p class="text-white mb-0">You are logged as: <span id="logged-user" class="text-warning text-uppercase"></span>
-            </p>
-          </div>
+            <div class="container-fluid justify-content-center">
+                <p class="text-white mb-0">You are logged as: <span id="logged-user"
+                        class="text-warning text-uppercase"></span>
+                </p>
+            </div>
         </nav>
-      </header>
+    </header>
 
 
     <div class="container text-center mb-5 px-4">
@@ -61,15 +62,13 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="container mt-4">
-        <div class="accordion" id="searched-users">
-
-        </div>
 
 
 
-            
+
+
+
+
 
         <!-- contenitore accordion Shops -->
         <div class="accordion" id="myShops">
@@ -94,28 +93,30 @@
 
             <!-- next acc item -->
         </div>
-    <!--Contenitore esterno per l'intero accordion del singolo utente-->
-    <div class="accordion mt-5" id="oneUser">
+        <!--Contenitore esterno per l'intero accordion del singolo utente-->
+        <div class="accordion mt-5" id="oneUser">
 
 
-        <!--Tutto il contenuto interno dell'accordion va nel mondo delle idee, grazie alla classe d-none. Grazie al metodo clone poi attingeremo a questa idea per concretizzarla e grazie ad un ciclo questo avverrà per ogni singolo user -->
-        <div class="d-none">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="titleAccordion">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#utente-IDuser" aria-expanded="false" aria-controls="collapseOne">
-                        Nome utente
-                    </button>
-                </h2>
-                <div id="utente-IDuser" class="accordion-collapse collapse" aria-labelledby="titleAccordion"
-                    data-bs-parent="#oneUser">
-                    <div class="accordion-body">
+            <!--Tutto il contenuto interno dell'accordion va nel mondo delle idee, grazie alla classe d-none. Grazie al metodo clone poi attingeremo a questa idea per concretizzarla e grazie ad un ciclo questo avverrà per ogni singolo user -->
+            <div class="d-none">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="titleAccordion">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#utente-IDuser" aria-expanded="false" aria-controls="collapseOne">
+                            Nome utente
+                        </button>
+                    </h2>
+                    <div id="utente-IDuser" class="accordion-collapse collapse" aria-labelledby="titleAccordion"
+                        data-bs-parent="#oneUser">
+                        <div class="accordion-body">
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <footer class="fixed-bottom">
         <div class="text-center text-white p-2 bg-dark">
             © 2022 Copyright: Team 2
@@ -145,7 +146,7 @@
 
 
 
-    <script src="../js/read.js" type="module"></script> 
+    <script src="../js/read.js" type="module"></script>
     <!-- type="module" indica che sul file read.js c'è un import di un altro file, che in questo caso è class.js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

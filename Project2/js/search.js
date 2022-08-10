@@ -17,7 +17,6 @@ let ricercati = []
         
             for( let utente of response){
                 ricercati.push(utente.shopName)
-                /*
                 console.log(ricercati)
                 if(((utente.shopName).toLowerCase()).startsWith(ricercata) && ricercata != "") {
                     console.log(ricercati)
@@ -36,7 +35,7 @@ let ricercati = []
                         itemsBox.removeChild(itemsBox.firstChild)
 
                     }
-                }*/
+                }
             }
         
         
