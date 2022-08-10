@@ -15,6 +15,7 @@ fetch(apiUtenti + "/" + userId)
         let email = document.querySelector("#email")
         let telefono = document.querySelector("#telefono")
         let password = document.querySelector("#password")
+        let conferma = document.querySelector("#conferma-password")
 
         nome.value = utente.firstName
         cognome.value = utente.lastName
@@ -23,12 +24,15 @@ fetch(apiUtenti + "/" + userId)
         email.value = utente.email
         telefono.value = utente.tel
         password.value = utente.password
+        conferma.value = utente.password
     })
 
 let button = document.querySelector("#salva-modifiche")
 
 button.addEventListener("click", function (e) {
     e.preventDefault()
+    let conferma = document.querySelector("#conferma-password")
+    if (password.value == conferma.value) {
     let utente = {
         username: username.value,
         firstName: nome.value,
@@ -45,7 +49,7 @@ button.addEventListener("click", function (e) {
             "content-type": "application/json"
         }
     }
-
+    
     Swal.fire({
         title: 'Do you want to save the changes?',
         showDenyButton: true,
@@ -75,4 +79,23 @@ button.addEventListener("click", function (e) {
             location.href = "index.html"
         }
     })
+    if (password.value != conferma.value){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
+          return false
+    }
+}else{
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Passwords arent matching!',
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true
+    }).then(inputPwrd.value = '')
+}
 })
