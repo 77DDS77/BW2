@@ -1,4 +1,4 @@
-
+/*
 
 let ricerca = document.querySelector("#ricerca")
 let ricercaButton = document.querySelector("#searchBtn")
@@ -18,3 +18,4 @@ ricercaButton.addEventListener("click", function(){
         }
     })
 })
+*/

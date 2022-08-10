@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "username": "DDS",
-      "firstName": "Davide",
-      "lastName": "Dal Santo",
-      "gender": "male",
-      "email": "davide.dds.dalsanto@gmail.com",
-      "tel": "340 333 4455",
-      "password": "test",
-      "id": 1
-    },
-    {
       "username": "Clearu",
       "firstName": "Claudio",
       "lastName": "Urru",
@@ -29,6 +19,16 @@
       "tel": "333 444 4446",
       "password": "123456",
       "id": 4
+    },
+    {
+      "username": "DDS",
+      "firstName": "Gianni",
+      "lastName": "Fugassa",
+      "gender": "Female",
+      "email": "davide.dds.dalsanto@gmail.com",
+      "tel": "3408884945",
+      "password": "prova",
+      "id": 5
     }
   ],
   "shops": [

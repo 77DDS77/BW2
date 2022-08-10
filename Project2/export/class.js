@@ -3,6 +3,8 @@
 //id e password da non mostrare su accordion
 //COMMENTARE
 
+import { modificaUtente } from "./functions.js"
+
 //shoop creation class
 export class Shop{
     constructor(id, shopName, address, mail, tel, products) {
@@ -78,7 +80,7 @@ export class Shop{
         let accDelete = document.querySelector("#shop-" + this.id)
         let api = "http://localhost:3000/shops"
         bottoneDelete.addEventListener("click", () => {
-            eliminaUtente(this.id, accDelete, api)
+            eliminaShop(this.id, accDelete, api)
         })
 
         body.append(bottoneUpdate, bottoneDelete)
@@ -158,7 +160,7 @@ export class Utente {
         let bottoneUpdate = document.createElement("a")
         bottoneUpdate.textContent = "Update"
         bottoneUpdate.className = "btn btn-warning"
-        bottoneUpdate.href = "modifica-users.html?id=" + this.id
+
         let bottoneDelete = document.createElement("a")
         bottoneDelete.textContent = "Delete"
         bottoneDelete.className = "btn btn-danger ms-2"
@@ -171,13 +173,15 @@ export class Utente {
         bottoneDelete.addEventListener("click", () => {
             eliminaUtente(this.id, accDelete, apiUsers, loggedID)
         })
+        bottoneUpdate.addEventListener("click", () => {
+            modificaUtente(this.id, loggedID)
+        })
 
         bodyAccordion.append(bottoneUpdate, bottoneDelete)
 
     }
 
-
-
-
 }
+
+
 

@@ -39,7 +39,7 @@ button.addEventListener("click", function(e) {
             Swal.fire({
                 icon: 'success',
                 title: 'Your new shop has been created',
-                text: `shop ${res.shop} ID #${res.id} has created`,
+                text: `Shop ${res.shopName} ID #${res.id} has created`,
                 showConfirmButton: true
               }).then(() => {
                 location.href = "index.html"

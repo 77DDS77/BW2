@@ -55,7 +55,7 @@ export function logOut(){
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, log me out!'
       }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire({
@@ -70,4 +70,17 @@ export function logOut(){
             })
         }
       })
+}
+
+export function modificaUtente(id, loggedID){
+    if(id == loggedID){
+        window.location.href = "modifica-users.html?id=" + id;
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Sorry but you cant!',
+            text: 'You can Update only your profile',
+            showConfirmButton: true
+        })
+    }
 }
