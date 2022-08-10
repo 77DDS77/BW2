@@ -137,7 +137,6 @@ export class Utente {
 
     attributeCollapse() {
         let collapse = document.querySelector("#utente-" + this.id + " #utente-IDuser")
-        console.log(collapse);
         collapse.id = "collapse-user-" + this.id
         collapse.setAttribute("data-labelledby", "utente-" + this.id)
     }
@@ -160,15 +159,17 @@ export class Utente {
         bottoneUpdate.textContent = "Update"
         bottoneUpdate.className = "btn btn-warning"
         bottoneUpdate.href = "modifica-users.html?id=" + this.id
-        console.log(this.id)
         let bottoneDelete = document.createElement("a")
         bottoneDelete.textContent = "Delete"
         bottoneDelete.className = "btn btn-danger ms-2"
 
         let accDelete = document.querySelector("#utente-" + this.id)
+
         let apiUsers = "http://localhost:3000/users"
+        let loggedID = JSON.parse(sessionStorage.getItem('user logged in')).id
+
         bottoneDelete.addEventListener("click", () => {
-            eliminaUtente(this.id, accDelete, apiUsers)
+            eliminaUtente(this.id, accDelete, apiUsers, loggedID)
         })
 
         bodyAccordion.append(bottoneUpdate, bottoneDelete)

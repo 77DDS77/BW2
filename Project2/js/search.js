@@ -4,7 +4,7 @@ let ricerca = document.querySelector("#ricerca")
 let ricercaButton = document.querySelector("#searchBtn")
 let searched = document.querySelector("#searched-users")
 
-import { Shop } from "../constructor/class.js";
+import { Shop } from "../export/class.js";
 
 ricercaButton.addEventListener("click", function(){
     let ricercata = ricerca.value

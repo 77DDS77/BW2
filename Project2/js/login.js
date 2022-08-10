@@ -19,106 +19,50 @@ function checkLogin() {
     fetch(apiUtenti)
         .then(res => res.json())
         .then(users => {
-            for (let user of users) {
-                if (inputUser.value && inputPwrd.value) {
+            let findedUser = users.find(u => u.username == inputUser.value || u.email == inputUser.value)
+            if(findedUser){
 
-                    if (inputUser.value == user.username || inputUser.value == user.email) {
-                        if (inputPwrd.value == user.password) {
-                            console.log('pw e username corretti');
-                            //both userInput and password are correct
-                            Swal.fire({
-                                icon: 'success',
-                                title: `Your're logged in!`,
-                                showConfirmButton: false,
-                                timerProgressBar: true,
-                                timer: 2500
-                            }).then(() => {
-
-                                sessionStorage.setItem('user logged in', JSON.stringify(user));
-                                checkLogStatus();
-                            })
-                            break;
-                        } else {
-                            //input wrong password
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'Uncorrect password, try again!',
-                                showConfirmButton: false,
-                                timer: 2500,
-                                timerProgressBar: true
-                            }).then(inputPwrd.value = '')
-                        }
-                    } else {
-                        //username or email don't match any existing user
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Username or E-mail must be incorrect!',
-                            showConfirmButton: false,
-                            timer: 2500,
-                            timerProgressBar: true
-                        }).then(() => {
-                            inputUser.value = '';
-                            inputPwrd.value = '';
-                        })
-                    }
-
-                } else {
-                    //one or both input fields are empty
-                    console.log('campi vuoti');
+                if(findedUser.password == inputPwrd.value){
+                    //user is found and password matches
+                    Swal.fire({
+                        icon: 'success',
+                        title: `Your're logged in!`,
+                        showConfirmButton: false,
+                        timerProgressBar: true,
+                        timer: 2500
+                    }).then(() => {
+                        sessionStorage.setItem('user logged in', JSON.stringify(findedUser));
+                        checkLogStatus();
+                    })
+                }else{
+                    //user matches bit pw is incorrect
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'You must fill the input fields!',
+                        text: 'Incorrect password, try again!',
                         showConfirmButton: false,
                         timer: 2500,
                         timerProgressBar: true
-                    })
+                    }).then(inputPwrd.value = '')
+    
                 }
+            }else{
+                //no user match or empty input fields
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `Something's wrong, make sure to fill the fields with the correct data`,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true
+                }).then(() => {
+                    inputUser.value = '';
+                    inputPwrd.value = '';
+                })
             }
         })
 }
 
-function checkLogStatus() {
-    let showLoggedUsername = document.querySelector('#logged-user')
-    let loginBtn = document.querySelector('#login-btn')
-    let logoutBtn = document.querySelector('#logout-btn')
 
-    let userLogged = sessionStorage.getItem('user logged in') ? JSON.parse(sessionStorage.getItem('user logged in')) : {};
+import {checkLogStatus} from '../export/functions.js'
 
-    //show the logged user username + switch button between login and logout
-    if(userLogged.username) {
-        showLoggedUsername.textContent = userLogged.username;
-        loginBtn.classList.add('d-none');
-        logoutBtn.classList.remove('d-none');
-    }else{
-        showLoggedUsername.textContent = 'guest'
-    }
-
-    //logout btn 
-    logoutBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        logOut();
-    })
-}
-
-function logOut(){ 
-    Swal.fire({
-        title: 'Are you sure you want  to log out?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'You logged out.',
-            'See you next time!',
-            'success'
-            )
-            sessionStorage.removeItem('user logged in')
-        }
-      })
-}
