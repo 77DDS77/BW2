@@ -61,3 +61,6 @@ button.addEventListener("click", function(e) {
     }
 
 })
+
+import {checkLogStatus} from '../export/functions.js'
+window.onload = checkLogStatus()

@@ -99,3 +99,6 @@ button.addEventListener("click", function (e) {
     }).then(inputPwrd.value = '')
 }
 })
+
+import {checkLogStatus} from '../export/functions.js'
+window.onload = checkLogStatus()

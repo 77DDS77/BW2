@@ -166,7 +166,7 @@ export class Utente {
         let accDelete = document.querySelector("#utente-" + this.id)
 
         let apiUsers = "http://localhost:3000/users"
-        let loggedID = JSON.parse(sessionStorage.getItem('user logged in')).id
+        let loggedID = sessionStorage.getItem('user logged in') ? JSON.parse(sessionStorage.getItem('user logged in')).id : null;
 
         bottoneDelete.addEventListener("click", () => {
             eliminaUtente(this.id, accDelete, apiUsers, loggedID)
