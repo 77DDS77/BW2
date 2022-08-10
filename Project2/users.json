@@ -19,6 +19,16 @@
       "tel": "1312313",
       "password": "prova",
       "id": 3
+    },
+    {
+      "username": "fabi",
+      "firstName": "Fabi",
+      "lastName": "B",
+      "gender": "female",
+      "email": "fabiolabarone.fb94@gmail.com",
+      "tel": "333 444 4446",
+      "password": "123456",
+      "id": 4
     }
   ],
   "shops": [
@@ -37,6 +47,14 @@
       "tel": "12325163",
       "products": "Pizze",
       "id": 2
+    },
+    {
+      "shopName": "Caramelle shop",
+      "address": "via Appia 81",
+      "mail": "caramelleworld2@gmail.com",
+      "tel": "321 909 7766",
+      "products": "caramelle e dolciumi",
+      "id": 3
     }
   ]
 }

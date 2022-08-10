@@ -69,14 +69,14 @@ button.addEventListener("click", function (e) {
                         showConfirmButton: false,
                         timer: 2000
                       }).then(() => {
-                        location.href = "index.html"
+                        location.href = "shops&users.html"
                       })
                     
                 })
         } else if (result.isDenied) {
             Swal.fire('Changes are not saved', 'you can keep updating', 'info')
         } else {
-            location.href = "index.html"
+            location.href = "shops&users.html"
         }
     })
     if (password.value != conferma.value){
