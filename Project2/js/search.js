@@ -1,4 +1,4 @@
-
+/*
 
 let ricerca = document.querySelector("#ricerca")
 let ricercaButton = document.querySelector("#searchBtn")
@@ -41,6 +41,8 @@ let ricercati = []
         
         
     })
+})
+*/
 
 let ricercate = ricercati
 ricerca.addEventListener("input", () => {

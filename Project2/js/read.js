@@ -1,7 +1,7 @@
 
 window.onload = getShops()
-window.onload = checkLogStatus()
 
+window.onload = checkLogStatus()
 
 //Shop class import is on functions.js file
 import { getShops } from "../export/functions.js";

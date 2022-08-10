@@ -96,7 +96,10 @@ button.addEventListener("click", function (e) {
         showConfirmButton: false,
         timer: 2500,
         timerProgressBar: true
-    }).then(inputPwrd.value = '')
+    }).then( () => {
+        password.value = '';
+        conferma.value = '';
+    })
 }
 })
 
