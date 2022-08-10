@@ -46,7 +46,7 @@ button.addEventListener("click", function(e) {
                 text: `user ${res.firstName} ${res.lastName} ID #${res.id} has created`,
                 showConfirmButton: true
               }).then(() => {
-                location.href = "index.html"
+                location.href = "shops&users.html"
               })
         })
     }

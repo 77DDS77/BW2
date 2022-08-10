@@ -1,4 +1,4 @@
-import {Shop} from './class.js'
+import { Shop } from '../export/class.js'
 
 export function getShops() {
     fetch("http://localhost:3000/shops")
@@ -11,7 +11,7 @@ export function getShops() {
 }
 
 
-import { Utente } from '../export/class.js' ;
+import { Utente } from '../export/class.js' 
 
 export function getUsers() {
     fetch("http://localhost:3000/users")
