@@ -4,7 +4,6 @@ let button = document.querySelector("#salva-user")
 
 button.addEventListener("click", function(e) {
     e.preventDefault()
-    //------------------------ inserire check per password e conferma password ==
     let nome = document.querySelector("#nome")
     let cognome = document.querySelector("#cognome")
     let username = document.querySelector("#username")
@@ -12,6 +11,7 @@ button.addEventListener("click", function(e) {
     let email = document.querySelector("#email")
     let telefono = document.querySelector("#telefono")
     let password = document.querySelector("#password")
+    let conferma = document.querySelector("#conferma-password")
 
     let utente = {
         username: username.value,
@@ -29,6 +29,15 @@ button.addEventListener("click", function(e) {
         headers: {
             "content-type": "application/json"
         }
+    }
+    if (password != conferma){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
+        return false
     }
     if (username.value == "" || nome.value == "" || cognome.value == "" || gender.value == "" || email.value == "" || telefono.value == "") {
         Swal.fire({
