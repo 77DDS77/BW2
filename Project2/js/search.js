@@ -4,12 +4,6 @@ let ricerca = document.querySelector("#ricerca")
 let ricercaButton = document.querySelector("#searchBtn")
 let searched = document.querySelector("#searched-users")
 let api = "http://localhost:3000/shops"
-
-import { Shop } from "../export/class.js";
-
-
-
-
 let ric = []
 let ricercabili = []
 
@@ -18,10 +12,8 @@ fetch(api)
     .then(response => {
         for (let shop of response) {
             ricercabili.push(shop)
-            console.log(ricercabili)
         }
         ric = ricercabili.map(r => r.shopName.toUpperCase())
-        console.log(ric)
         ricerca.addEventListener("input", search)
     })
 
@@ -61,12 +53,7 @@ function modificaClone(clone, li) {
     button.setAttribute("data-bs-target", "#collapse-" + clone.id)
 
     let divCollapse = document.querySelector(`#${clone.id} .accordion-collapse`)
-    console.log(button)
     divCollapse.id = "collapse-" + clone.id
-
-    console.log(divCollapse)
-
-
 
 
     return clone

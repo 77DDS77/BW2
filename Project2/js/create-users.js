@@ -59,6 +59,8 @@ button.addEventListener("click", function(e) {
                     showConfirmButton: true
                 }).then(() => {
                     location.href = "shops&users.html"
+                    sessionStorage.setItem('user logged in', JSON.stringify(res));
+                    checkLogStatus();
                 })
             })
         }
