@@ -2,31 +2,11 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    background-color: rgba(241,237,233,255);
-    background-color: rgb(252, 171, 72); 
-    background-color: rgb(253, 150, 181); 
-    background-color: rgb(250, 161, 188); 
-    background-color: rgb(254, 201, 217); 
-    
-    background-color: rgb(252, 185, 161);
-   
-    background-color: rgba(241,237,233);
-    background-color: rgb(252, 201, 182);
     background-color: rgb(252, 223, 187, 0.5); /*giallo chiaro*/
-
 }
 
 .text-primary{
-   color: rgba(102,103,171,255)!important ;
-   color: rgb(0, 30, 150) !important;
-   color: blue !important;
-   color: rgb(170, 170, 11) !important;
-   color: rgba(255,193,7) !important;
   
-   color: black !important;
-
-    color: rgba(133,160,148) !important;
-    color: rgba(137,75,93) !important;
     color: rgb(211, 167, 34) !important;
 }
 
