@@ -58,7 +58,8 @@ export class Shop{
         let body = document.querySelector("#collapse-" + this.id + " .accordion-body")
 
         for (let prop in this) {
-            if (prop != "id") {
+            if (prop != "id" && prop != "mail" && prop != "tel") {
+                
                 let p = document.createElement("p")
                 let span = document.createElement("span")
                 span.textContent = prop + ": "
@@ -67,6 +68,31 @@ export class Shop{
                 p.textContent = this[prop]
                 p.prepend(span)
                 body.append(p)
+
+            }else if(prop == "mail"){
+
+                let a = document.createElement("a")
+                let span = document.createElement("span")
+                span.textContent = prop + ": "
+                a.classList.add("text-light", "d-block", "mb-3")
+                span.className = "text-primary"
+                a.textContent = this[prop]
+                a.href = 'mailto:'+this.mail
+                a.prepend(span)
+                body.append(a)
+
+            }else if(prop == "tel"){
+
+                console.log('helo');
+                let a = document.createElement("a")
+                let span = document.createElement("span")
+                span.textContent = prop + ": "
+                a.classList.add("text-light", "d-block", "mb-3")
+                span.className = "text-primary"
+                a.textContent = this[prop]
+                a.href = 'tel:'+this.mail
+                a.prepend(span)
+                body.append(a)
 
             }
         }
@@ -160,7 +186,7 @@ export class Utente {
     generaBody() {
         let bodyAccordion = document.querySelector("#collapse-user-" + this.id + " .accordion-body")
         for (let prop in this) {
-            if (prop != "id" && prop != "password") {
+            if (prop != "id" && prop != "password" && prop != "email" && prop != "tel") {
                 let p = document.createElement("p")
                 let span = document.createElement("span")
                 span.textContent = prop + ": "
@@ -169,7 +195,34 @@ export class Utente {
                 p.prepend(span)
                 bodyAccordion.append(p)
 
+            }else if(prop == "email"){
+
+                console.log('helo');
+                let a = document.createElement("a")
+                let span = document.createElement("span")
+                span.textContent = prop + ": "
+                a.classList.add("text-black","d-block", "mb-3")
+                span.className = "text-primary"
+                a.textContent = this[prop]
+                a.href = 'mailto:'+this.email
+                a.prepend(span)
+                bodyAccordion.append(a)
+
+            }else if(prop == "tel"){
+
+                console.log('helo');
+                let a = document.createElement("a")
+                let span = document.createElement("span")
+                span.textContent = prop + ": "
+                a.classList.add("text-black","d-block", "mb-3")
+                span.className = "text-primary"
+                a.textContent = this[prop]
+                a.href = 'tel:'+this.email
+                a.prepend(span)
+                bodyAccordion.append(a)
+
             }
+            
         }
         let bottoneUpdate = document.createElement("a")
         bottoneUpdate.textContent = "Update"

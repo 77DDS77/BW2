@@ -5,6 +5,10 @@ body{
     background-color: rgb(252, 223, 187, 0.5); /*giallo chiaro*/
 }
 
+a{
+    text-decoration: none;
+}
+
 input:focus{
     box-shadow: none !important;
     border: 1px solid #ffc107 !important;

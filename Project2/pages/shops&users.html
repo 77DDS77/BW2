@@ -52,12 +52,12 @@
 
             <label for="nome" class="text-primary mt-4">Find: </label>
             <div class="container">
-                    <input checked type="radio" name="filto" value="users"> Users
-                    <input type="radio" name="filto" value="shops"> Shops
+                    <input id="radioUser" type="radio" name="filto" value="users"> Users
+                    <input id="radioShop" type="radio" name="filto" value="shops"> Shops
             </div>
             <div class="row m-0">
                 <div class="col-12 px-0">
-                    <input type="text" class="form-control text-center" id="ricerca" placeholder="SHOPNAME">
+                    <input type="text" class="form-control text-center" id="ricerca" placeholder="Search here">
                 </div>
             </div>
             <div id="search-items" class="text-start">
@@ -66,13 +66,6 @@
                 </ul>
             </div>
         </div>
-
-
-
-
-
-
-
 
         <!-- contenitore accordion Shops -->
         <div class="accordion" id="myShops">

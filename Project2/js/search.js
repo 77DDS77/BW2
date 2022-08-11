@@ -3,42 +3,70 @@
 let ricerca = document.querySelector("#ricerca")
 let ricercaButton = document.querySelector("#searchBtn")
 let searched = document.querySelector("#searched-users")
-let api = "http://localhost:3000/shops"
+let resultContainer = document.querySelector(".search-items-box")
 let ric = []
 let ricercabili = []
+let radioUser = document.querySelector("#radioUser")
+let radioShop = document.querySelector("#radioShop")
 
-fetch(api)
+
+radioShop.addEventListener("click",() => {
+    cleanResultContainer()
+    cleanFields()
+    let api = 'http://localhost:3000/shops'
+    var filtro = '#shop-'
+    fetch(api)
     .then(response => response.json())
     .then(response => {
         for (let shop of response) {
             ricercabili.push(shop)
         }
+        
         ric = ricercabili.map(r => r.shopName.toUpperCase())
-        ricerca.addEventListener("input", search)
+        ricerca.addEventListener("input", () => {
+            search(filtro)
+        })
     })
+})
+
+radioUser.addEventListener("click",() => {
+    cleanResultContainer()
+    cleanFields()
+    let api = 'http://localhost:3000/users'
+    var filtro = '#utente-'
+    fetch(api)
+    .then(response => response.json())
+    .then(response => {
+        for (let shop of response) {
+            ricercabili.push(shop)
+        }
+        
+        ric = ricercabili.map(r => r.firstName.toUpperCase())
+        ricerca.addEventListener("input", () => {
+            search(filtro)
+        })
+    })
+})
 
 
 
-function search() {
+
+
+function search(filtro) {
     let itemsBox = document.querySelector(".search-items-box")
-    while (itemsBox.firstChild){
-        itemsBox.removeChild(itemsBox.firstChild)
-
-    }
+    cleanResultContainer()
     for (let i = 0; i < ric.length; i++) {
 
         if (ric[i].indexOf(ricerca.value.toUpperCase()) > -1 && ricerca.value != "") {
             
             let li = document.createElement("div")
-            let accFind = `#shop-${ricercabili[i].id}`
+            let accFind = `${filtro}${ricercabili[i].id}`
             let accFindClone = document.querySelector(accFind).cloneNode(true)
             itemsBox.append(li)
             modificaClone(accFindClone, li)
 
-        } 
-        
-    }
-    
+        }  
+    }   
 }
 
 function modificaClone(clone, li) {
@@ -60,87 +88,14 @@ function modificaClone(clone, li) {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-let ricerca = document.querySelector("#ricerca")
-let ricercaButton = document.querySelector("#searchBtn")
-let searched = document.querySelector("#searched-users")
-let api = "http://localhost:3000/shops"
-
-import { Shop } from "../export/class.js";
-
-
-let itemsBox = document.querySelector(".search-items-box")
-
-let ricercati = []
-    fetch(api)
-    .then(response => response.json())
-    .then(response => {
-        
-            for( let utente of response){
-                ricercati.push(utente.shopName)
-                console.log(ricercati)
-                if(((utente.shopName).toLowerCase()).startsWith(ricercata) && ricercata != "") {
-                    console.log(ricercati)
-                    console.log(utente.shopName)
-                    console.log(((utente.shopName).toLowerCase()).startsWith(ricercata))
-                    let li = document.createElement("li")
-                    let a = document.createElement("a")
-                    a.textContent = utente.shopName
-                    li.id = utente.id
-                    li.append(a)
-                    itemsBox.append(li)
-                    break
-                } else if (ricercata == "" || ricercata != ((utente.shopName).toLowerCase()).startsWith(ricercata)) {
-                    console.log("else")
-                    while (itemsBox.firstChild){
-                        itemsBox.removeChild(itemsBox.firstChild)
-
-                    }
-                }
-            }
-        
-        
-    })
-})
-
-
-let ricercate = ricercati
-ricerca.addEventListener("input", () => {
-    let ricercata = ricerca.value
-    console.log(ricercata)
-    for (let ricerche of ricercate) {
-        console.log(ricercate)
-        console.log((ricerche.toLowerCase()).startsWith(ricercata), "   ", ricerche.toLowerCase())
-        if ((ricerche.toLowerCase()).startsWith(ricercata) && ricercata != "") {
-            console.log("fatto")
-            let li = document.createElement("li")
-            let a = document.createElement("a")
-            a.textContent = ricerche
-            li.append(a)
-            itemsBox.append(li)
-            ricercate.pop()
-            ricercate = ricercate.filter(item => item !== ricerche)
-        } else if (ricercata == "") {
-            while (itemsBox.firstChild){
-                itemsBox.removeChild(itemsBox.firstChild)
-                
-            }
-            ricercate = ricercati
-        }
+function cleanResultContainer(){
+    while (resultContainer.firstChild){
+        resultContainer.removeChild(resultContainer.firstChild)
     }
+}
 
-    
-})
-*/
+function cleanFields(){
+    ricerca.value = '';
+    ric = [];
+    ricercabili = [];
+}
