@@ -38,6 +38,7 @@
       "mail": "davideshop@gmail.com",
       "tel": "334 887 2829",
       "products": "Fugasse",
+      "shopOwner": "Gianni Fugassa",
       "id": 1
     },
     {
@@ -46,6 +47,7 @@
       "mail": "test@test.it",
       "tel": "12325163",
       "products": "Pizze",
+      "shopOwner": "Gianni Fugassa",
       "id": 2
     },
     {
@@ -54,6 +56,7 @@
       "mail": "caramelleworld2@gmail.com",
       "tel": "321 909 7766",
       "products": "caramelle e dolciumi",
+      "shopOwner": "Gianni Fugassa",
       "id": 3
     },
     {
@@ -62,7 +65,26 @@
       "mail": "test@test@test",
       "tel": "test0123test",
       "products": "test",
+      "shopOwner": "Gianni Fugassa",
       "id": 4
+    },
+    {
+      "shopName": "ssdgsgs",
+      "address": "gsgsgs",
+      "mail": "gsgsg",
+      "tel": "sgsgs",
+      "products": "gsgsg",
+      "shopOwner": "Gianni Fugassa (DDS #5)",
+      "id": 5
+    },
+    {
+      "shopName": "aeaetaettae",
+      "address": "aetaetaeaet",
+      "mail": "aetaeet",
+      "tel": "aetataet",
+      "products": "aetaetat",
+      "shopOwner": "Gianni Fugassa (DDS #5)",
+      "id": 6
     }
   ]
 }

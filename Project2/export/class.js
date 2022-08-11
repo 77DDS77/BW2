@@ -4,16 +4,18 @@
 //COMMENTARE
 
 import { modificaUtente } from "./functions.js"
+import { modificaShop } from "./functions.js"
 
 //shoop creation class
 export class Shop{
-    constructor(id, shopName, address, mail, tel, products) {
+    constructor(id, shopName, address, mail, tel, products, shopOwner) {
         this.id = id
         this.shopName = shopName
         this.address = address
         this.mail = mail
         this.tel = tel
         this.products = products
+        this.shopOwner = shopOwner
         
         this.showShop()
     }
@@ -73,14 +75,26 @@ export class Shop{
 
         bottoneUpdate.textContent = "Update"
         bottoneUpdate.className = "btn btn-warning"
-        bottoneUpdate.href = "modifica-shops.html?id=" + this.id
+
         bottoneDelete.textContent = "Delete"
         bottoneDelete.className = "btn btn-danger ms-2"
 
         let accDelete = document.querySelector("#shop-" + this.id)
         let api = "http://localhost:3000/shops"
+
+        //steps to get from logged user the shop Owner string for the logic check in eliminaShop
+        let loggedAccount = sessionStorage.getItem('user logged in') ? JSON.parse(sessionStorage.getItem('user logged in')) : null;
+
+        if(loggedAccount){
+            var loggedOwner = `${loggedAccount.firstName} ${loggedAccount.lastName} (${loggedAccount.username} #${loggedAccount.id})`
+        }
+
         bottoneDelete.addEventListener("click", () => {
-            eliminaShop(this.id, accDelete, api)
+            eliminaShop(loggedOwner, accDelete, api, this.shopOwner)
+        })
+
+        bottoneUpdate.addEventListener("click", () => {
+            modificaShop(this.id, this.shopOwner, loggedOwner)
         })
 
         body.append(bottoneUpdate, bottoneDelete)
