@@ -5,7 +5,7 @@ export function getShops() {
     .then(risposta => risposta.json())
     .then(shops => {
         for(let shop of shops) {
-            shop = new Shop(shop.id, shop.shopName, shop.address, shop.mail, shop.tel, shop.products)
+            shop = new Shop(shop.id, shop.shopName, shop.address, shop.mail, shop.tel, shop.products, shop.shopOwner)
         }
     })
 }
@@ -80,6 +80,19 @@ export function modificaUtente(id, loggedID){
             icon: 'error',
             title: 'Sorry but you cant!',
             text: 'You can Update only your profile',
+            showConfirmButton: true
+        })
+    }
+}
+
+export function modificaShop(id, shopOwner, loggedOwner){
+    if(shopOwner == loggedOwner){
+        window.location.href = "modifica-shops.html?id=" + id;
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Sorry but you cant!',
+            text: 'You can Update only your Shops',
             showConfirmButton: true
         })
     }

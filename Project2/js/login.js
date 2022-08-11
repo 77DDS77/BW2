@@ -33,6 +33,7 @@ function checkLogin() {
                     }).then(() => {
                         sessionStorage.setItem('user logged in', JSON.stringify(findedUser));
                         checkLogStatus();
+                        location.href = '../pages/index.html';
                     })
                 }else{
                     //user matches bit pw is incorrect
