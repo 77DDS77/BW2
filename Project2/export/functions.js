@@ -151,7 +151,8 @@ function search(filtro, array, ricercaParam) {
 
 //Modify the accordion so the searched results interaction don't interfere with their "original" conterparts
 function modificaClone(clone, li) {
-
+    let test = clone.id.split('')
+    let test1 = test[test.length-1]
     clone.id = clone.id + "-searched"
     li.append(clone)
 
@@ -163,6 +164,38 @@ function modificaClone(clone, li) {
 
     let divCollapse = document.querySelector(`#${clone.id} .accordion-collapse`)
     divCollapse.id = "collapse-" + clone.id
+
+    let loggedID = sessionStorage.getItem('user logged in') ? JSON.parse(sessionStorage.getItem('user logged in')).id : null;
+
+    let updateBtnClone = document.querySelector(`#${clone.id} .btn-warning`)
+    let deleteBtnClone = document.querySelector(`#${clone.id} .btn-danger`)
+    deleteBtnClone.className = 'd-none'
+    updateBtnClone.textContent = 'Go to'
+    updateBtnClone.addEventListener('click', () => {
+
+        // I'm sorry.
+        if(clone.id.includes('utente')){
+
+            updateBtnClone.href = '#utente-' + test1
+
+            let colpevole = document.querySelector('#utente-' + test1 + ' .accordion-button');
+            colpevole.classList.remove('collapsed')
+            colpevole.setAttribute('aria-expanded', 'true')
+
+            let omertoso = document.querySelector('#collapse-user-' + test1)
+            omertoso.classList.add('show')
+
+        }else{
+            updateBtnClone.href = '#shop-' + test1
+
+            let colpevole = document.querySelector('#shop-' + test1 + ' .accordion-button');
+            colpevole.classList.remove('collapsed')
+            colpevole.setAttribute('aria-expanded', 'true')
+
+            let omertoso = document.querySelector('#collapse-' + test1)
+            omertoso.classList.add('show')
+        }
+    })
 
 
     return clone

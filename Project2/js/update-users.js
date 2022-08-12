@@ -4,6 +4,25 @@ console.log(parametri)
 let userId = parametri.get("id")
 console.log(userId)
 
+let pswrdBtn = document.querySelector('.password-visibility')
+
+pswrdBtn.addEventListener("click", (e) =>{
+    e.preventDefault();
+    let pswrd = document.querySelector('#password')
+    let pswrdConf = document.querySelector('#conferma-password')
+    console.log(pswrd.type);
+    if(pswrd.type == "password"){
+        pswrd.type = 'text'
+        pswrdConf.type = 'text'
+        pswrdBtn.innerHTML = '<i class="bi bi-eye"></i>'
+    }else{
+        pswrd.type = 'password'
+        pswrdConf.type = 'password'
+        pswrdBtn.innerHTML = '<i class="bi bi-eye-slash"></i>'
+    }
+})
+
+
 //fetch per prelevare dati utente esistente
 fetch(apiUtenti + "/" + userId)
     .then(response => response.json())
