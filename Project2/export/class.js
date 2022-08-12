@@ -83,7 +83,6 @@ export class Shop{
 
             }else if(prop == "tel"){
 
-                console.log('helo');
                 let a = document.createElement("a")
                 let span = document.createElement("span")
                 span.textContent = prop + ": "
@@ -197,7 +196,6 @@ export class Utente {
 
             }else if(prop == "email"){
 
-                console.log('helo');
                 let a = document.createElement("a")
                 let span = document.createElement("span")
                 span.textContent = prop + ": "
@@ -210,7 +208,6 @@ export class Utente {
 
             }else if(prop == "tel"){
 
-                console.log('helo');
                 let a = document.createElement("a")
                 let span = document.createElement("span")
                 span.textContent = prop + ": "

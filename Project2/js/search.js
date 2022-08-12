@@ -99,3 +99,16 @@ function cleanFields(){
     ric = [];
     ricercabili = [];
 }
+
+let testarray = [];
+fetch('http://localhost:3000/users')
+.then(res => res.json())
+.then(users => {
+    for(let user of users){
+        testarray.push(user)
+    }
+})
+console.log(testarray, testarray.length);
+for(let i = 0 ; i < testarray.length; i++){
+    console.log(testarray[i]);
+}
