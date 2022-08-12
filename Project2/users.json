@@ -4,9 +4,9 @@
       "username": "DDS",
       "firstName": "Davide",
       "lastName": "Dal Santo",
-      "gender": "male",
+      "gender": "Male",
       "email": "davide.dds.dalsanto@gmail.com",
-      "tel": "340 333 4455",
+      "tel": "3408884945",
       "password": "test",
       "id": 1
     },
@@ -15,46 +15,68 @@
       "firstName": "Claudio",
       "lastName": "Urru",
       "gender": "Male",
-      "email": "iausdiaudiuh",
-      "tel": "1312313",
+      "email": "claudio@gmail.com",
+      "tel": "541 456 3678",
+      "password": "sgabello",
+      "id": 2
+    },
+    {
+      "username": "Sawak0",
+      "firstName": "Alessia",
+      "lastName": "Campanile",
+      "gender": "Female",
+      "email": "alessia@gmail.com",
+      "tel": "123 546 6789",
       "password": "prova",
       "id": 3
     },
     {
-      "username": "fabi",
-      "firstName": "Fabi",
-      "lastName": "B",
-      "gender": "female",
-      "email": "fabiolabarone.fb94@gmail.com",
-      "tel": "333 444 4446",
-      "password": "123456",
+      "username": "FabiCoding",
+      "firstName": "Fabiola",
+      "lastName": "Barone",
+      "gender": "Female",
+      "email": "fabiola@gmail.com",
+      "tel": "389 765 9087",
+      "password": "test",
       "id": 4
     }
   ],
   "shops": [
     {
       "shopName": "Davide's Shop",
-      "address": "Via Appia 1, Roma",
-      "mail": "davideshop@gmail.com",
-      "tel": "334 887 2829",
+      "address": "Via Roma 1 Vigonza (PD)",
+      "mail": "davide.dds.dalsanto@gmail.com",
+      "tel": "3408884945",
       "products": "Fugasse",
+      "shopOwner": "Davide Dal Santo (DDS #1)",
       "id": 1
     },
     {
-      "shopName": "Pizzeria Arcangelo",
-      "address": "Via roma 1 Reggio",
-      "mail": "test@test.it",
-      "tel": "12325163",
-      "products": "Pizze",
+      "shopName": "Clearu's PCs",
+      "address": "Via Appia 1 Roma (RM)",
+      "mail": "claudio@gmail.com",
+      "tel": "124451234532",
+      "products": "PC repairs shop",
+      "shopOwner": "Claudio Urru (Clearu #2)",
       "id": 2
     },
     {
-      "shopName": "Caramelle shop",
-      "address": "via Appia 81",
-      "mail": "caramelleworld2@gmail.com",
-      "tel": "321 909 7766",
-      "products": "caramelle e dolciumi",
+      "shopName": "Alessia's shop",
+      "address": "Via paluello 5, Milano (MI)",
+      "mail": "alessia@gmail.com",
+      "tel": "15346125673",
+      "products": "Manga shop",
+      "shopOwner": "Alessia Campanile (Sawak0 #3)",
       "id": 3
+    },
+    {
+      "shopName": "Fabiola's shop",
+      "address": "Piazza delle Erbe 6 (PD)",
+      "mail": "fabiola@gmail.com",
+      "tel": "43127681891",
+      "products": "Gioielli",
+      "shopOwner": "Fabiola Barone (FabiCoding #4)",
+      "id": 4
     }
   ]
 }

@@ -61,7 +61,7 @@ button.addEventListener("click", function (e) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Your work has been saved',
-                        text: `shop ${res.shopName} has been updated`,
+                        text: `Shop ${res.shopName} has been updated`,
                         showConfirmButton: false,
                         timer: 2000
                     }).then(() => {
