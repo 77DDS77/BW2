@@ -24,6 +24,7 @@ export function getUsers() {
 }
 
 
+
 //login functions
 export function checkLogStatus() {
     let showLoggedUsername = document.querySelector('#logged-user')
@@ -96,4 +97,74 @@ export function modificaShop(id, shopOwner, loggedOwner){
             showConfirmButton: true
         })
     }
+}
+
+//-----SEARCH FUNCTIONS
+
+//setting the search parameters, syntax[1, 2, 3, 4]
+/*
+    1 = radiobutton for the event listener
+    2 = ID prefix for users or shops [string]
+    3 = obj array (where to search)
+    4 = key of my obj EX "tel" to search by phone number [string]
+*/
+export function setSearch(radio, filtro, array, searchParam){
+    let ricerca = document.querySelector("#ricerca")
+    radio.addEventListener("click", () => {
+        cleanResultContainer()
+        cleanFields()
+        ricerca.addEventListener("input", () => {
+            search(filtro, array, searchParam)
+        })
+    })
+}
+
+//clean the result container when user switch search filter
+function cleanResultContainer() {
+    let resultContainer = document.querySelector(".search-items-box")
+    while (resultContainer.firstChild) {
+        resultContainer.removeChild(resultContainer.firstChild)
+    }
+}
+
+//more cleaning for UX
+function cleanFields() {
+    ricerca.value = '';
+}
+
+//modular search function working with both users and shop, can be upgraded to X search filter
+function search(filtro, array, ricercaParam) {
+
+    let itemsBox = document.querySelector(".search-items-box")
+    cleanResultContainer()
+    let userTrovati = array.filter((r) => r[ricercaParam].toUpperCase().search(ricerca.value.toUpperCase()) != -1 && ricerca.value)
+
+    for (let user of userTrovati) {
+        let div = document.createElement("div")
+        let accFind = `${filtro}${user.id}`
+        let accFindClone = document.querySelector(accFind).cloneNode(true)
+        itemsBox.append(div)
+        modificaClone(accFindClone, div)
+    }
+
+}
+
+//Modify the accordion so the searched results interaction don't interfere with their "original" conterparts
+function modificaClone(clone, li) {
+
+    clone.id = clone.id + "-searched"
+    li.append(clone)
+
+    let headerClone = document.querySelector(`#${clone.id} h2`)
+    headerClone.id = headerClone.id + "-searched"
+
+    let button = document.querySelector(`#${clone.id} h2 button`)
+    button.setAttribute("data-bs-target", "#collapse-" + clone.id)
+
+    let divCollapse = document.querySelector(`#${clone.id} .accordion-collapse`)
+    divCollapse.id = "collapse-" + clone.id
+
+
+    return clone
+
 }

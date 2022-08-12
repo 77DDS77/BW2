@@ -1,114 +1,32 @@
+import {setSearch} from '../export/functions.js'
 
+searchPRO()
 
-let ricerca = document.querySelector("#ricerca")
-let ricercaButton = document.querySelector("#searchBtn")
-let searched = document.querySelector("#searched-users")
-let resultContainer = document.querySelector(".search-items-box")
-let ric = []
-let ricercabili = []
-let radioUser = document.querySelector("#radioUser")
-let radioShop = document.querySelector("#radioShop")
+async function searchPRO() {
+    //let shops = await fetch("http://localhost:3000/shops").then(res => res.json())
+    //let users = await fetch("http://localhost:3000/users").then(res => res.json())
+    let [shops, users] = await Promise.all([
+        fetch("http://localhost:3000/shops").then(res => res.json()),
+        fetch("http://localhost:3000/users").then(res => res.json())
+    ])
 
-
-radioShop.addEventListener("click",() => {
-    cleanResultContainer()
-    cleanFields()
-    let api = 'http://localhost:3000/shops'
-    var filtro = '#shop-'
-    fetch(api)
-    .then(response => response.json())
-    .then(response => {
-        for (let shop of response) {
-            ricercabili.push(shop)
-        }
-        
-        ric = ricercabili.map(r => r.shopName.toUpperCase())
-        ricerca.addEventListener("input", () => {
-            search(filtro)
-        })
-    })
-})
-
-radioUser.addEventListener("click",() => {
-    cleanResultContainer()
-    cleanFields()
-    let api = 'http://localhost:3000/users'
-    var filtro = '#utente-'
-    fetch(api)
-    .then(response => response.json())
-    .then(response => {
-        for (let shop of response) {
-            ricercabili.push(shop)
-        }
-        
-        ric = ricercabili.map(r => r.firstName.toUpperCase())
-        ricerca.addEventListener("input", () => {
-            search(filtro)
-        })
-    })
-})
-
-
-
-
-
-function search(filtro) {
-    let itemsBox = document.querySelector(".search-items-box")
-    cleanResultContainer()
-    for (let i = 0; i < ric.length; i++) {
-
-        if (ric[i].indexOf(ricerca.value.toUpperCase()) > -1 && ricerca.value != "") {
-            
-            let li = document.createElement("div")
-            let accFind = `${filtro}${ricercabili[i].id}`
-            let accFindClone = document.querySelector(accFind).cloneNode(true)
-            itemsBox.append(li)
-            modificaClone(accFindClone, li)
-
-        }  
-    }   
-}
-
-function modificaClone(clone, li) {
+    let radioUser = document.querySelector("#radioUser")
+    setSearch(radioUser, '#utente-', users, 'firstName')
     
-    clone.id = clone.id + "-searched"
-    li.append(clone)
+    let radioShop = document.querySelector("#radioShop")
+    setSearch(radioShop, '#shop-', shops, 'shopName')
 
-    let headerClone = document.querySelector(`#${clone.id} h2`)
-    headerClone.id = headerClone.id + "-searched"
-
-    let button = document.querySelector(`#${clone.id} h2 button`)
-    button.setAttribute("data-bs-target", "#collapse-" + clone.id)
-
-    let divCollapse = document.querySelector(`#${clone.id} .accordion-collapse`)
-    divCollapse.id = "collapse-" + clone.id
-
-
-    return clone
-
+    let radioShopOwner = document.querySelector("#radioShopOwner")
+    setSearch(radioShopOwner, '#shop-', shops, 'shopOwner')
 }
 
-function cleanResultContainer(){
-    while (resultContainer.firstChild){
-        resultContainer.removeChild(resultContainer.firstChild)
-    }
-}
 
-function cleanFields(){
-    ricerca.value = '';
-    ric = [];
-    ricercabili = [];
-}
 
-let testarray = [];
-fetch('http://localhost:3000/users')
-.then(res => res.json())
-.then(users => {
-    for(let user of users){
-        testarray.push(user)
-    }
-})
-console.log(testarray, testarray.length);
-for(let i = 0 ; i < testarray.length; i++){
-    console.log(testarray[i]);
-}
+
+
+
+
+
+
+
+
